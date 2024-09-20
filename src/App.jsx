@@ -1,10 +1,10 @@
 import { Navbar } from "./components/Navbar";
-
+import { Profile } from "./pages/Profilepage";
 const App=()=>{
 	return(
 		<>
 		<Navbar/>
-		<h1>hello</h1>
+		<Profile/>
 		</>
 	)
 }
