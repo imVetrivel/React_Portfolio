@@ -1,7 +1,7 @@
 import '../assets/css/core.css'
 
 
-const Profile = ()=>{
+const Profilepage = ()=>{
 	return(
 		<>
 		<div className='flex flex-row justify-center items-center w-[60%] mx-auto'>
@@ -16,4 +16,4 @@ const Profile = ()=>{
 	)
 }
 
-export { Profile };
+export { Profilepage };
