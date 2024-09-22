@@ -10,3 +10,9 @@
 body{
 	background-color: rgb(255, 244, 244);
 }
+
+.active{
+	background-color:rgb(255, 244, 244);
+	/* background-color:red; */
+	color: black;
+}

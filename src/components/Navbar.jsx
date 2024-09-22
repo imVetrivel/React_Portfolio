@@ -6,39 +6,46 @@ const Navbar = () => {
 
   const Navlinks = [
     {
-      title: "Profilepage",
+      title: "Profile",
       path: "/profile"
     },
     {
-      title: "Projectpage",
+      title: "Project",
       path: "/project"
     },
     {
-      title: "ContactPage",
+      title: "Contact",
       path: "/contact"
     }]
 
   return (
-    <div className="flex h-[10%] bg-black/80 mt-1 sticky">
-      <div className="flex text-3xl m-3 text-white w-1/2 pl-4 font-bold ">
-        <h1>Vetrivel K</h1>
-      </div>
-      <div className="flex items-center justify-center w-1/2 font-bold">
-        <ul className='flex'>
-          {
-            Navlinks.map((navdata, index) => (
-              <li key={index} className='text-xl text-white mx-3'>
-        <NavLink to={navdata.path}>
-          {navdata.title}
-        </NavLink>
-      </li>
-            ))
-          }
+    <>
+      <div className="flex flex-col md:flex-row bg-black/80 mt-1 sticky top-0 h-auto md:h-[100%] items-center">
 
-        </ul>
-        <User2 className='h-10 w-10 text-white rounded-full border-2' />
+        <div className="flex items-center justify-between w-full md:w-1/2 text-white">
+          <NavLink to='/' className={' rounded-md'}>
+            <h1 className='text-2xl md:text-3xl p-4 font-bold'>Vetrivel K</h1>
+          </NavLink>
+
+        </div>
+        <div className="flex items-center justify-center w-full md:w-1/2 font-bold">
+          <ul className='flex flex-row'>
+            {
+              Navlinks.map((navdata, index) => (
+                <li key={index} className='text-lg md:text-xl text-white'>
+                  <NavLink to={navdata.path} className={'p-4 m-3 rounded-md'}>
+                    {navdata.title}
+                  </NavLink>
+                </li>
+              ))
+            }
+
+          </ul>
+          <User2 className='h-8 w-8 md:h-10 md:w-10 text-white rounded-full border-2' />
+        </div>
       </div>
-    </div>
+    </>
+
   )
 }
 
