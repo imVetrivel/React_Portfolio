@@ -1,9 +1,15 @@
-import React from 'react'
-
+import React, { useState } from 'react'
+import { ProjectCard } from '../components/ProjectCard'
 const Projectpage = () => {
+  
+
   return (
-	<div>Projectpage</div>
+    <>
+      <ProjectCard />
+      
+    </>
+
   )
 }
 
-export {Projectpage};
+export { Projectpage };

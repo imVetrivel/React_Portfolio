@@ -11,7 +11,7 @@ const Weblayout = () => {
 
                 </div>
 
-                <div className='h-[90vh] w-full flex justify-center items-center'>
+                <div className='h-[90vh] w-full flex justify-center items-center flex-wrap'>
 
                             <Outlet />
 
