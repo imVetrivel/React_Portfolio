@@ -1,56 +1,28 @@
 import '../assets/css/core.css'
-import Java from '../assets/img/java.png'
-import Weather from '../assets/img/weather.png'
-import Node from '../assets/img/Nodefarm.png'
+
 import React, { useRef, useState } from 'react'
 
-import { ProjectDesc } from './ProjectDesc'
 
-const ProjectCard = () => {
 
-	const [visible, setvisible] = useState(false)
-	const onClose = () => {
-		setvisible(false);
-	}
-
-	const Projects = [
-		{
-			title: "Pet Shop",
-			desc: "pet",
-			img: Java
-		},
-		{
-			title: "Weather App",
-			desc: "weather",
-			img: Weather
-		},
-		{
-			title: "Node-Farm",
-			desc: "node",
-			img: Node
-		}
-
-	]
+const ProjectCard = (props) => {
 
 	return (
 		<>
-			<div className='flex space-x-6 flex-wrap justify-center items-center'>
+			<div className='h-[100%] w-[100vw] flex flex-wrap justify-center items-center space-x-10 '>
 				{
-					Projects.map((projectdata, index) =>
+					props.data.map((projectdata, index) =>
 					(
-						<div key={index} className="w-60 h-80 bg-neutral-800 rounded-3xl text-neutral-300 p-4 flex flex-col items-start justify-center gap-3 hover:bg-gray-900 hover:shadow-2xl hover:shadow-sky-400 transition-shadow">
-							<div className="w-[95%] h-[50%] bg-sky-300 rounded-2xl"><img src={projectdata.img} alt="" className='h-[100%]' /></div>
+						<div key={index} className="h-1/2 w-1/5 bg-neutral-800 rounded-3xl text-neutral-300 p-4 flex flex-col gap-3 hover:bg-gray-900 hover:shadow-2xl hover:shadow-sky-400 transition-shadow hover:scale-105 items-start hover:duration-700 ">
+							<div className="w-[95%] h-[50%] bg-sky-300 rounded-2xl"><img src={projectdata.img} alt="" className='rounded-lg h-[100%] w-[100%] ' /></div>
 							<div className="">
 								<p className="font-extrabold">{projectdata.title}</p>
-								<p className="">4 popular types of cards in UI design.</p>
+								<p className="">{projectdata.oneline}</p>
 							</div>
-							<button className="bg-sky-700 font-extrabold p-2 px-6 rounded-xl hover:bg-sky-500 transition-colors" onClick={() => setvisible(true)}>See more</button>
+							<button className="bg-sky-700 font-extrabold p-2 rounded-xl hover:bg-sky-500 transition-colors "onClick={()=>{props.open();props.setvalue(index);}}>See more</button>
 						</div>
 					))
 				}
-				{
-					visible && <ProjectDesc exit={onClose} />
-				}
+				
 			</div>
 
 		</>
